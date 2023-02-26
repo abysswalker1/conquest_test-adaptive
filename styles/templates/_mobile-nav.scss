@@ -1,0 +1,63 @@
+.wrap-all .mobile-nav_wrap {
+  transform: scale(0);
+}
+
+.wrap-all.mobile-nav-opened .mobile-nav_wrap {
+  transform: scale(1);
+  @include flex-box();
+  position: fixed;
+  bottom: 0;top: 0;right: 0;left: 0;
+  background-color: rgba(0,0,0, 0.4);
+  z-index: 3;
+  & .mobile-nav {
+    right: 0;
+    transition: 400ms ease-in;
+  }
+}
+
+.mobile-nav {
+  @include flex-box(space-between, stretch, column);
+  position: absolute;
+  top: 0;right: -40%;
+  height: 100vh;
+  width: 40%;
+  padding: 0 0 30px;
+  background: #FDFDFB;
+  &__messages {
+    display: none;
+  }
+  &__link {
+    display: block;
+    border-bottom: 1px solid lightgray;
+    @include roboto-regular(14px);
+    color: #444240;
+    padding: 15px;
+    text-decoration: none;
+  }
+
+  &__socials {
+      padding: 0 15px;
+      @include flex-box(flex-start);
+    column-gap: 18px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .mobile-nav__messages {
+    @include flex-box(space-between, stretch, column);
+    &-item {
+      @include flex-box(flex-start);
+      border-bottom: 1px solid lightgray;
+      @include roboto-regular(14px);
+      color: #444240;
+      padding: 20px 15px;
+      text-decoration: none;
+      & .mobile-messages-icon {
+        margin-right: 15px;
+      }
+      & img {
+        width: 20px;
+      }
+    }
+  }
+}

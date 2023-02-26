@@ -1,0 +1,75 @@
+@mixin flex-box($justify: center, $align: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin std-container($width) {
+  width: 100%;
+  max-width: $width;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@mixin reset-button-styles() {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+}
+
+// Fonts
+
+// Playfair Display
+@mixin playfair-bold($font-size: 12px) {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: $font-size;
+}
+
+@mixin playfair-regular($font-size: 12px) {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: $font-size;
+}
+
+// Roboto
+@mixin roboto-regular($font-size: 12px) {
+  font-weight: 400;
+  font-family: 'Roboto', serif;
+  font-size: $font-size;
+}
+
+@mixin roboto-light($font-size: 12px) {
+  font-family: 'Roboto', serif;
+  font-weight: 300;
+  font-size: $font-size;
+}
+
+@mixin roboto-semibold($font-size: 12px) {
+  font-family: 'Roboto', serif;
+  font-weight: 500;
+  font-size: $font-size;
+}
+
+@mixin roboto-bold($font-size: 12px) {
+  font-family: 'Roboto', serif;
+  font-weight: 700;
+  font-size: $font-size;
+}
+
+//Prata
+@mixin prata($font-size: 12px) {
+  font-family: 'Prata', serif;
+  font-weight: 400;
+  font-size: $font-size;
+}
+
+@mixin decorative-line($width: 50px) {
+  content: ' ';
+  width: $width;
+  height: 1px;
+  background-color: #8B8371;
+  display: inline-block;
+}

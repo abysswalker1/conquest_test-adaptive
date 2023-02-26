@@ -1,0 +1,98 @@
+@import "../mixins";
+
+.header {
+  height: 85px;
+  @include flex-box();
+  &__container {
+    @include flex-box(space-between);
+  }
+  &__logo {
+    @include flex-box();
+    @include reset-button-styles();
+  }
+  &__logo-text {
+    @include playfair-regular(12px);
+    text-transform: uppercase;
+    line-height: 16px;
+    letter-spacing: 0.14em;
+    color: $font-grey;
+  }
+
+  &__nav {
+    @include flex-box(space-between);
+    column-gap: 65px;
+  }
+  &__nav-link a{
+      @include roboto-regular(14px);
+      color: $font-grey;
+      text-decoration: none;
+  }
+
+  &__menu {
+    @include flex-box();
+    column-gap: 23px;
+  }
+  &__menu-btn {
+    @include reset-button-styles();
+    position: relative;
+    height: 16px;
+    cursor: pointer;
+    &#burger {
+      display: none;
+    }
+  }
+}
+
+.icon-favs.messages, .icon-cart.messages {
+  position: relative;
+  &::before {
+    content: '1';
+    top: -4px;
+    right: -7px;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    background-color: $pastelle-messages;
+    @include flex-box();
+    border-radius: 50px;
+    font-size: 8px;
+    color: $main-black;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+      &__nav {
+        column-gap: 35px;
+      }
+    }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    height: 58px;
+    &__logo-text {
+      @include playfair-regular(16px)
+    }
+    &__nav {
+      display: none;
+    }
+    &__menu-btn {
+      height: 30px;
+      &#burger {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .header__menu-btn {
+    &.icon-favs {
+      display: none;
+    }
+    &.icon-cart {
+      display: none;
+    }
+  }
+}

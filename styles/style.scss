@@ -1,0 +1,57 @@
+@import "mixins";
+@import "variables";
+
+@import 'templates/header';
+@import 'templates/main';
+@import "templates/models";
+@import "templates/banner";
+@import "templates/news";
+@import "templates/footer";
+@import "templates/mobile-nav";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  @include std-container(1160px);
+}
+
+.ruble {
+  margin-left: 6px;
+  height: 100%;
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .container {
+    @include std-container(992px);
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    @include std-container(720px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    @include std-container(510px);
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .container {
+    @include std-container(320px);
+  }
+}
+
+.wrap-all.mobile-nav-opened {
+  max-height: 100vh;
+  overflow: clip;
+}
